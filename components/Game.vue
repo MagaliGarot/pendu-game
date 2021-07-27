@@ -72,9 +72,11 @@ export default{
 
         if(this.splitLetter.length > 0){
           let letterButtonclick = this.letterButton.map(el => el.letter);
+
+          console.log('indexOf : ', this.splitLetter[0].indexOf(letterButtonclick[0]));
           let searchLetter = this.splitLetter[0].indexOf(letterButtonclick[0])
 
-           if(searchLetter > 0) {
+           if(searchLetter > -1) {
             console.log('Element trouvé');
           } 
           else{
@@ -83,7 +85,7 @@ export default{
             console.log(counter);
           }
         }
-        this.letterButton = [];
+          this.letterButton = [];
       },
     },
 }
