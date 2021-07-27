@@ -61,8 +61,6 @@ export default{
         let word = this.selectWord[0];
         const letters = word.split('');
         this.splitLetter.push(letters);
-       /*  console.log(this.listes[random].length)
-        console.log(this.listes[random]) */
       },
 
       
@@ -85,25 +83,7 @@ export default{
             console.log(counter);
           }
         }
-
-
-       /*  for(let j = 0; j < this.splitLetter.length; j++) {
-          const letterButtonclick = this.letterButton.map(el => el.letter);
-
-          console.log('letterButton sans le click', this.letterButton)
-          console.log('letterButtonclick', letterButtonclick)
-          console.log('splitLetter array + J', this.splitLetter[j])
-    
-          if(letterButtonclick[0] === this.splitLetter[j]) {
-            console.log('Element trouvé');
-          } 
-          else{
-            console.log('pas trouvé');
-            counter ++;
-            console.log(counter);
-          }
-        } */
-          this.letterButton = [];
+        this.letterButton = [];
       },
     },
 }
