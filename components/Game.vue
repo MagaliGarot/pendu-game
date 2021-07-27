@@ -61,13 +61,8 @@ export default{
         let word = this.selectWord[0];
         const letters = word.split('');
         this.splitLetter.push(letters);
-        console.log('array split -> letters', letters)
-        console.log('array split -> splitLetter', this.splitLetter)
-     
-
-        console.log(this.listes[random].length)
-        console.log(this.listes[random])
-        console.log("selectWord", this.selectWord)
+       /*  console.log(this.listes[random].length)
+        console.log(this.listes[random]) */
       },
 
       
@@ -79,15 +74,7 @@ export default{
 
         if(this.splitLetter.length > 0){
           let letterButtonclick = this.letterButton.map(el => el.letter);
-          console.log('letterButton sans le click', this.letterButton)
-          console.log('letterButtonclick', letterButtonclick)
-          console.log('this.splitLetter', this.splitLetter)
-
-          console.log('indexOf 1', this.splitLetter[0].indexOf(letterButtonclick[0]));
           let searchLetter = this.splitLetter[0].indexOf(letterButtonclick[0])
-
-          console.log('test tableau', this.splitLetter[0])
-          /* console.log(this.splitLetter.has(letterButtonclick)) */
 
            if(searchLetter > 0) {
             console.log('Element trouvé');
