@@ -1,17 +1,21 @@
 <template>
-  <div>
+  <div id="containerMain">
     <h1> Jeu du pendu </h1>
     <div>
       <button 
+        aria-label="Lancer la partie"
+        id="play"
         v-if="selectWord.length == 0" 
         @click="displayWord()"
         >
-        Jouer
+        <img aria-hidden="true" class="icon" src="../assets/image/gamepad-solid.svg">
       </button>
+      <img aria-hidden="true" id="teddy" src="../assets/image/nounour-entier.png">
       <div> 
-        <p>{{ selectWord }}</p>
-        <div v-if="selectWord.length" id="target">
-          <button v-for="(item, index) in alphabet" :key="index" @click="validateLetter(item) in alphabet">
+        <p>{{ splitLetter }}</p>
+        <p id="letterFind"></p>
+        <div v-if="selectWord.length" id="containerButton">
+          <button :aria-label="item.letter" :id="item.letter" class="buttonAlphabet" v-for="(item, index) in alphabet" :key="index" @click="validateLetter(item) in alphabet">
             {{ item.letter }}
           </button>
         </div>
