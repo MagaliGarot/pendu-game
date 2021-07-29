@@ -9,17 +9,30 @@
         @click="displayWord()"
         >
         <img aria-hidden="true" class="icon" src="../assets/image/gamepad-solid.svg">
+        Jouer
       </button>
-      <img aria-hidden="true" id="teddy" src="../assets/image/nounour-entier.png">
+      <img v-if="this.counterFalse.length == 0" aria-hidden="true" id="teddy" src="../assets/image/nounour-entier.png">
+      <img v-if="this.counterFalse.length == 1" aria-hidden="true" id="teddy2" src="../assets/image/nounours-1life.png">
+      <img v-if="this.counterFalse.length == 2" aria-hidden="true" id="teddy2" src="../assets/image/nounours-2life.png">
+      <img v-if="this.counterFalse.length == 3" aria-hidden="true" id="teddy2" src="../assets/image/nounours-3life.png">
+      <img v-if="this.counterFalse.length == 4" aria-hidden="true" id="teddy2" src="../assets/image/nounours-4life.png">
       <div> 
-        <p>{{ splitLetter }}</p>
-        <p id="letterFind"></p>
+
+        <div id="letterFind">
+            <span :id="item+index" v-for="(item, index) in splitLetter[0]" :key="index">
+                {{ item }}
+            </span>
+            <br>
+            <p v-for="(index) in splitLetter[0]" :key="index"></p>
+        </div>
+
         <div v-if="selectWord.length" id="containerButton">
-          <button :aria-label="item.letter" :id="item.letter" class="buttonAlphabet" v-for="(item, index) in alphabet" :key="index" @click="validateLetter(item) in alphabet">
+          <button :aria-label="item.letter" :id="'push' + item.letter" class="buttonAlphabet" v-for="(item, index) in alphabet" :key="index" @click="validateLetter(item) in alphabet">
             {{ item.letter }}
           </button>
         </div>
       </div>
+      <p>{{ splitLetter }}</p>
     </div>
   </div>
 </template>
@@ -37,7 +50,8 @@ export default{
               'plante',
               'hamster',
               'pyjama',
-              'vêtement',
+              'magique',
+              'patate',
               'mario',
               'pikachu',
             ],
@@ -50,10 +64,12 @@ export default{
             selectWord : [],
             splitLetter : [],
 
+            numbereId: [],
+            numberLetter: [],
+
             letterButton : [],
 
-            correct:[],
-            notCorrect:[],
+            counterFalse : [],
         }
     },
 
@@ -65,29 +81,68 @@ export default{
         let word = this.selectWord[0];
         const letters = word.split('');
         this.splitLetter.push(letters);
-      },
 
-      
+        for(let i = 0; i < letters.length; i++){ 
+          this.numberLetter.push(i);
+          console.log('this.letters.length; in boucle for', letters.length)
+          console.log('this.letters.length; in boucle for -> i', i)
+        }
+        console.log('this.numberLetter', this.numberLetter)
+        },
+
       validateLetter(alphabet){ 
-        let counter = 0;
         this.letterButton.push({
           letter : alphabet.letter
         })
 
         if(this.splitLetter.length > 0){
+          //cherche la lettre cliquée
           let letterButtonclick = this.letterButton.map(el => el.letter);
 
-          console.log('indexOf : ', this.splitLetter[0].indexOf(letterButtonclick[0]));
-          let searchLetter = this.splitLetter[0].indexOf(letterButtonclick[0])
+       /*    console.log('indexOf : ', this.splitLetter[0].indexOf(letterButtonclick[0]));
+          let searchLetter = this.splitLetter[0].indexOf(letterButtonclick[0]) */
+/* 
+          if(typeof this.splitLetter[0][letterButtonclick[0]] !== "undefined"){
+            console.log('pas undefined');
+          }else{
+            console.log('undefined');
+          } */
 
-           if(searchLetter > -1) {
-            console.log('Element trouvé');
-          } 
-          else{
-            console.log('pas trouvé');
-            counter ++;
-            console.log(counter);
+          //cherche si des lettres correspondent à ce qui a été cliqué
+          let checkLetter = this.splitLetter[0].filter((item, index) => {
+            console.log('item :', item, 'index :', index)
+          /*   this.numbereId.push(item, index); 
+            console.log('this.numbereId', this.numbereId)  */
+            return item == letterButtonclick[0];
+          });
+
+          console.log('checkLetter : ', checkLetter)
+          console.log('letterButtonclick[0] : ', letterButtonclick[0])
+
+          let counter = 0;
+
+          if(checkLetter.length > 0){
+            console.log('lettre trouvée')
+            console.log('avant la boucle for this.numberLetter.length', this.numberLetter.length)
+            for(let i = 0; i < this.numberLetter.length; i++){
+              console.log('id est = ', letterButtonclick[0]+`${i+1}`)
+              let myId =  document.getElementById(letterButtonclick[0]+`${i+1}`)
+              if(myId === null){
+                console.log('id inexistant')
+              }else{
+                document.getElementById(letterButtonclick[0]+`${i+1}`).style.cssText = "opacity: 100%;";
+              }
+            }
+            document.getElementById('push'+letterButtonclick[0]).style.cssText = "background-color: #50ef8d;";  
           }
+          else{
+            console.log('lettre non trouvée')
+            document.getElementById('push'+letterButtonclick[0]).style.cssText = "background-color: #ed220a;"; 
+            let counterResult = counter ++;
+            this.counterFalse.push(counterResult);
+            console.log('counterResult :', counterResult)
+            console.log('counterFalse :', this.counterFalse)
+          } 
         }
           this.letterButton = [];
       },

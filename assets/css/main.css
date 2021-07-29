@@ -43,14 +43,34 @@ p {
 
 #containerMain #play .icon {
   width: 2.5rem;
-  padding-top: 4px;
+  /*  padding-top: 4px; */
 }
 
-#containerMain #teddy {
+#containerMain #teddy, #containerMain #teddy2 {
   display: block;
   width: 20rem;
   margin-right: auto;
   margin-left: auto;
+}
+
+#containerMain #letterFind {
+  color: white;
+  width: 30rem;
+}
+
+#containerMain #letterFind span {
+  /* display: none; */
+  opacity: 0%;
+  margin: 10px;
+}
+
+#containerMain #letterFind p {
+  width: 10px;
+  margin: 10px;
+  border-style: none none solid none;
+  border-color: white;
+  border-width: 3px;
+  display: inline-block;
 }
 
 #containerMain .buttonAlphabet {
