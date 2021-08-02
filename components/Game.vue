@@ -17,6 +17,9 @@
       <img v-if="this.counterFalse.length == 3" aria-hidden="true" id="teddy" src="../assets/image/nounours-3life.png">
       <img v-if="this.counterFalse.length == 4" aria-hidden="true" id="teddy" src="../assets/image/nounours-4life.png">
       <img v-if="this.counterFalse.length == 5" aria-hidden="true" id="teddy" src="../assets/image/nounours-5life.png">
+      <button v-if="this.numberLetter.length == this.letterWon.length" @click="refreshTrue()">
+        Rejouer
+      </button>
       <div> 
 
         <div id="letterFind">
@@ -24,7 +27,7 @@
                 {{ item }}
             </span>
             <br>
-            <p v-for="(index) in splitLetter[0]" :key="'A' + index"></p>
+            <p v-for="(index) in splitLetter[0]" :key="'line'+index"></p>
         </div>
 
         <div v-if="selectWord.length" id="containerButton">
@@ -68,6 +71,7 @@ export default{
             numberLetter: [],
             letterButton : [],
             counterFalse : [],
+            letterWon: [],
         }
     },
 
@@ -82,8 +86,6 @@ export default{
 
         for(let i = 0; i < letters.length; i++){ 
           this.numberLetter.push(i);
-          console.log('this.letters.length; in boucle for', letters.length)
-          console.log('this.letters.length; in boucle for -> i', i)
         }
         console.log('this.numberLetter', this.numberLetter)
         },
@@ -95,10 +97,8 @@ export default{
         if(this.splitLetter.length > 0){
           //cherche la lettre cliquée
           let letterButtonclick = this.letterButton.map(el => el.letter);
-
           //cherche si des lettres correspondent à ce qui a été cliqué
           let checkLetter = this.splitLetter[0].filter((item, index) => {
-            console.log('item :', item, 'index :', index)
             return item == letterButtonclick[0];
           });
 
@@ -119,6 +119,8 @@ export default{
               }
             }
             document.getElementById('push'+letterButtonclick[0]).style.cssText = "background-color: #50ef8d;";  
+            this.letterWon.push(checkLetter);
+            console.log('letterWon', this.letterWon.length);
           }
           else{
             console.log('lettre non trouvée')
@@ -129,21 +131,18 @@ export default{
             console.log('counterResult :', counterResult)
             console.log('counterFalse :', this.counterFalse)
           } 
-
           if(this.counterFalse.length >= 5){
-             
-              this.$router.push('/game-over');
+             let self = this;
+
                setTimeout(function(){ 
-                 /* alert("Hello"); */
-           
-                }, 3000);
-              /*  setTimeout(function(){ 
-                truc  }, 
-              3000);  */
-             //  this.$router.push('/game-over') 
+                  self.$router.push('/game-over');
+                }, 1000);
+          }
+          if(this.numberLetter.length == this.letterWon.length){
+            alert('gagné')
           }
         }
-          this.letterButton = [];
+        this.letterButton = [];
       },
     },
 }
