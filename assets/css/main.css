@@ -24,6 +24,28 @@ p {
   text-align: center;
 }
 
+.containerNav {
+  background-color: #65b3be;
+  padding: 1rem 1rem;
+}
+
+.containerNav .navBar {
+  color: white;
+  text-decoration: none;
+  font-family: 'Scada', sans-serif;
+  margin: 5px 5px;
+  font-weight: 600;
+}
+
+.containerNav .navBar:hover {
+  color: black;
+}
+
+.containerNav .navBar:focus {
+  color: black;
+  outline: none;
+}
+
 #containerMain {
   width: 20rem;
   margin-right: auto;
@@ -35,18 +57,27 @@ p {
   color: white;
   border: none;
   border-radius: 3rem;
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   margin: 10px;
   font-family: 'Scada', sans-serif;
+  font-weight: 600;
 }
 
 #containerMain #play .icon {
   width: 2.5rem;
-  /*  padding-top: 4px; */
 }
 
-#containerMain #teddy, #containerMain #teddy2 {
+#containerMain #play:hover {
+  background-color: #fc8fcb;
+}
+
+#containerMain #play:focus {
+  background-color: #fc8fcb;
+  outline: none;
+}
+
+#containerMain #teddy {
   display: block;
   width: 20rem;
   margin-right: auto;
@@ -54,19 +85,19 @@ p {
 }
 
 #containerMain #letterFind {
+  width: 20rem;
   color: white;
-  width: 30rem;
+  text-align: center;
 }
 
 #containerMain #letterFind span {
-  /* display: none; */
   opacity: 0%;
-  margin: 10px;
+  margin: 10.5px;
 }
 
 #containerMain #letterFind p {
-  width: 10px;
-  margin: 10px;
+  width: 15px;
+  margin: 9px;
   border-style: none none solid none;
   border-color: white;
   border-width: 3px;

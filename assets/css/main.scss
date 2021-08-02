@@ -1,3 +1,4 @@
+//ALL
 *{
     margin: 0;
     padding: 0;
@@ -23,29 +24,67 @@
     text-align: center;
   }
 
+//Nav
+.containerNav{
+  background-color: #65b3be;
+  padding: 1rem 1rem;
+  .navBar{
+    color: white;
+    text-decoration: none;
+    font-family: 'Scada', sans-serif;
+    margin: 5px 5px;
+    font-weight: 600;
+    &:hover{
+      color: black;
+    }
+    &:focus{
+      color: black;
+      outline: none;
+    }
+  }
+}
+
+//Game
   #containerMain{
     width: 20rem;
     margin-right: auto;
     margin-left: auto;
 
     #play{
-        
         background-color: #65b3be;
         color: white;
         border: none;
         border-radius: 3rem;
-        width: 60px;
-        height: 60px;
+        width: 75px;
+        height: 75px;
         margin: 10px;
         font-family: 'Scada', sans-serif;
-
+        font-weight: 600;
         .icon{
             width: 2.5rem;
-           /*  padding-top: 4px; */
+        }
+        &:hover{
+          background-color: #fc8fcb;
+          .icon{
+            animation-name: rotate;
+            animation-duration: 4s;
+            @keyframes rotate{
+              from {
+                transform: rotate(0deg);
+              }
+              to {
+                transform: rotate(360deg);
+              }
+           }
+          }
+        }
+        &:focus{
+          background-color: #fc8fcb;
+          outline: none;
         }
     }
 
-    #teddy, #teddy2{
+    #teddy{
         display: block;
         width: 20rem;
         margin-right: auto;
@@ -53,21 +92,22 @@
     }
 
     #letterFind{
+      width: 20rem;
       color: white;
-      width: 30rem;
+      text-align: center;
    
       span{
-        /* display: none; */
         opacity: 0%;
-        margin: 10px;
+        margin: 10.5px;
       }
       p{
-        width: 10px;
-        margin: 10px;
+        width: 15px;
+        margin: 9px;
         border-style: none none solid none;
         border-color: white;
         border-width: 3px;
         display: inline-block;
+       
       }
     }
 

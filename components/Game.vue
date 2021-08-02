@@ -12,10 +12,11 @@
         Jouer
       </button>
       <img v-if="this.counterFalse.length == 0" aria-hidden="true" id="teddy" src="../assets/image/nounour-entier.png">
-      <img v-if="this.counterFalse.length == 1" aria-hidden="true" id="teddy2" src="../assets/image/nounours-1life.png">
-      <img v-if="this.counterFalse.length == 2" aria-hidden="true" id="teddy2" src="../assets/image/nounours-2life.png">
-      <img v-if="this.counterFalse.length == 3" aria-hidden="true" id="teddy2" src="../assets/image/nounours-3life.png">
-      <img v-if="this.counterFalse.length == 4" aria-hidden="true" id="teddy2" src="../assets/image/nounours-4life.png">
+      <img v-if="this.counterFalse.length == 1" aria-hidden="true" id="teddy" src="../assets/image/nounours-1life.png">
+      <img v-if="this.counterFalse.length == 2" aria-hidden="true" id="teddy" src="../assets/image/nounours-2life.png">
+      <img v-if="this.counterFalse.length == 3" aria-hidden="true" id="teddy" src="../assets/image/nounours-3life.png">
+      <img v-if="this.counterFalse.length == 4" aria-hidden="true" id="teddy" src="../assets/image/nounours-4life.png">
+      <img v-if="this.counterFalse.length == 5" aria-hidden="true" id="teddy" src="../assets/image/nounours-5life.png">
       <div> 
 
         <div id="letterFind">
@@ -23,7 +24,7 @@
                 {{ item }}
             </span>
             <br>
-            <p v-for="(index) in splitLetter[0]" :key="index"></p>
+            <p v-for="(index) in splitLetter[0]" :key="'A' + index"></p>
         </div>
 
         <div v-if="selectWord.length" id="containerButton">
@@ -32,6 +33,7 @@
           </button>
         </div>
       </div>
+    <!--   A supprimer -->
       <p>{{ splitLetter }}</p>
     </div>
   </div>
@@ -63,12 +65,8 @@ export default{
             ],
             selectWord : [],
             splitLetter : [],
-
-            numbereId: [],
             numberLetter: [],
-
             letterButton : [],
-
             counterFalse : [],
         }
     },
@@ -94,25 +92,13 @@ export default{
         this.letterButton.push({
           letter : alphabet.letter
         })
-
         if(this.splitLetter.length > 0){
           //cherche la lettre cliquée
           let letterButtonclick = this.letterButton.map(el => el.letter);
 
-       /*    console.log('indexOf : ', this.splitLetter[0].indexOf(letterButtonclick[0]));
-          let searchLetter = this.splitLetter[0].indexOf(letterButtonclick[0]) */
-/* 
-          if(typeof this.splitLetter[0][letterButtonclick[0]] !== "undefined"){
-            console.log('pas undefined');
-          }else{
-            console.log('undefined');
-          } */
-
           //cherche si des lettres correspondent à ce qui a été cliqué
           let checkLetter = this.splitLetter[0].filter((item, index) => {
             console.log('item :', item, 'index :', index)
-          /*   this.numbereId.push(item, index); 
-            console.log('this.numbereId', this.numbereId)  */
             return item == letterButtonclick[0];
           });
 
@@ -125,12 +111,11 @@ export default{
             console.log('lettre trouvée')
             console.log('avant la boucle for this.numberLetter.length', this.numberLetter.length)
             for(let i = 0; i < this.numberLetter.length; i++){
-              console.log('id est = ', letterButtonclick[0]+`${i+1}`)
-              let myId =  document.getElementById(letterButtonclick[0]+`${i+1}`)
+              let myId =  document.getElementById(letterButtonclick[0]+`${i}`)
               if(myId === null){
                 console.log('id inexistant')
               }else{
-                document.getElementById(letterButtonclick[0]+`${i+1}`).style.cssText = "opacity: 100%;";
+                document.getElementById(letterButtonclick[0]+`${i}`).style.cssText = "opacity: 100%;";
               }
             }
             document.getElementById('push'+letterButtonclick[0]).style.cssText = "background-color: #50ef8d;";  
@@ -139,10 +124,24 @@ export default{
             console.log('lettre non trouvée')
             document.getElementById('push'+letterButtonclick[0]).style.cssText = "background-color: #ed220a;"; 
             let counterResult = counter ++;
+            //counter == 5 -> Game Over
             this.counterFalse.push(counterResult);
             console.log('counterResult :', counterResult)
             console.log('counterFalse :', this.counterFalse)
           } 
+
+          if(this.counterFalse.length >= 5){
+             
+              this.$router.push('/game-over');
+               setTimeout(function(){ 
+                 /* alert("Hello"); */
+           
+                }, 3000);
+              /*  setTimeout(function(){ 
+                truc  }, 
+              3000);  */
+             //  this.$router.push('/game-over') 
+          }
         }
           this.letterButton = [];
       },
