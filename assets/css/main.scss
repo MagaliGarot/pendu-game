@@ -8,7 +8,7 @@
   body{
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: rgb(24, 26, 32);
   }
 
   h1{
@@ -16,7 +16,7 @@
     margin-bottom: 30px;
     color: white;
     text-align: center;
-    font-family: 'Scada', sans-serif;
+    font-size: 2.3rem;
   }
 
   p{
@@ -26,13 +26,20 @@
 
 //Nav
 .containerNav{
-  background-color: #65b3be;
+  background-color: #22666e;
   padding: 1rem 1rem;
+  animation-name: colorChange;
+  animation-duration: 14s;
+  @keyframes colorChange{
+    0% {  background-color: #22666e; }
+    50%  {  background-color: #65b3be; }
+    100%{   background-color: #22666e;}
+ }
   .navBar{
     color: white;
     text-decoration: none;
-    font-family: 'Scada', sans-serif;
-    margin: 5px 5px;
+    margin: 9px 9px;
+    font-size: 1.2rem;
     font-weight: 600;
     &:hover{
       text-decoration:underline;
@@ -60,8 +67,8 @@
         width: 75px;
         height: 75px;
         margin: 10px;
-        font-family: 'Scada', sans-serif;
         font-weight: 600;
+        font-size: 1rem;
         .icon{
             width: 2.5rem;
         }
@@ -114,22 +121,22 @@
     }
 
     .buttonAlphabet{
-        background-color: #65b3be;
+        background-color: #22666e;
         color: white;
         border: none;
         border-radius: 1rem;
         width: 30px;
         height: 30px;
         margin: 10px;
-        font-family: 'Scada', sans-serif;
+        font-size: larger;
         font-weight: 800;
 
         &:hover{
-            background-color: #105963;
+            background-color: #28aebd;
         }
         &:focus{
             outline: none;
-            background-color: #105963;
+            background-color: #28aebd;
         }
     }
   }

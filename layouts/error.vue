@@ -1,13 +1,21 @@
 <template>
-    <div class="containerGame-Over">
-        <h1 class="textGameOver">Vous avez perdu</h1>
-        <img aria-hidden="true" id="teddy" src="../assets/image/nounours-game-over.png">
-        <button id="play"  @click="pageGame()">Rejouer</button>
+     <div class="containerError">
+        <h1 class="textError" v-if="error.statusCode === 404"> 404 </h1>
+        <h1 class="textError" v-else>An error occurred - {{ error.statusCode }}</h1>
+        <p class="textErrorTwo">Ouuupsss,
+            <br>
+            page non trouvée, c'est embêtant !
+        </p>
+        <img aria-hidden="true" id="teddy" src="@/assets/image/nounours-game-over.png">
+        <button id="play"  @click="pageGame()">Jouer</button>
     </div>
 </template>
 
 <script>
-export default{
+export default {
+    name: 'Notfound',
+    props: ['error'],
+    layout: 'error', // you can set a custom layout for the error page
     methods: {
         pageGame(){
             this.$router.push('/');
@@ -18,14 +26,20 @@ export default{
 
 <style lang="scss" scoped>
 
-.containerGame-Over{
+.containerError{
     width: 20rem;
     margin-right: auto;
     margin-left: auto;
-   .textGameOver{
+   .textError{
+        font-size: 5rem;
+        font-family: 'Scada', sans-serif;
         animation-name: textAnimate;
         animation-duration: 14s;
         animation-iteration-count: infinite;
+   }
+   .textErrorTwo{
+        font-size: 2rem;
+        font-family: 'Scada', sans-serif;
    }
     #teddy{
         display: block;
@@ -65,44 +79,41 @@ export default{
             opacity: 100%;
         }
         25% {  
-            transform: translateY(5%); 
+            transform: translateY(4%); 
             opacity: 60%;
         }
         50%  { 
-            transform: translateY(-5%);
+            transform: translateY(-4%);
             transform: translateX(-1%);
         }
         75% { 
-            transform: translateY(5%);
+            transform: translateY(4%);
             opacity: 60%; 
         } 
         100%{ 
-            transform: translateY(-5%);
+            transform: translateY(-4%);
             opacity: 90%; 
         }
      }
      @keyframes textAnimate{
-        0% {  
-            transform: translateX(0%); 
-            opacity: 100%;
-        }
-        25% {  
-            transform: translateX(1%); 
-            opacity: 60%;
-             font-size: 2.3rem;
-        }
-        50%  { 
-            transform: translateX(-1%);
-            opacity: 100%;
-        }
-        75% { 
-            transform: translateX(1%);
-            opacity: 90%; 
-        } 
-        100%{ 
-            transform: translateX(-1%);
-            opacity: 100%; 
-        }
+            0% {
+            transform: skewX(-5deg);
+      }
+      5% {
+        transform: skewX(5deg);
+      }
+      10% {
+        transform: skewX(-5deg);
+      }
+      15% {
+        transform: skewX(5deg);
+      }
+      20% {
+        transform: skewX(3deg);
+      }
+      100% {
+        transform: skewX(-3deg);
+      }
      }
 }
 </style>

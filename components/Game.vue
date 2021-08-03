@@ -17,9 +17,6 @@
       <img v-if="this.counterFalse.length == 3" aria-hidden="true" id="teddy" src="../assets/image/nounours-3life.png">
       <img v-if="this.counterFalse.length == 4" aria-hidden="true" id="teddy" src="../assets/image/nounours-4life.png">
       <img v-if="this.counterFalse.length == 5" aria-hidden="true" id="teddy" src="../assets/image/nounours-5life.png">
-      <button v-if="this.numberLetter.length == this.letterWon.length" @click="refreshTrue()">
-        Rejouer
-      </button>
       <div> 
 
         <div id="letterFind">
@@ -27,7 +24,7 @@
                 {{ item }}
             </span>
             <br>
-            <p v-for="(index) in splitLetter[0]" :key="'line'+index"></p>
+            <p v-for="(index) in splitLetter[0]" :key="`${numberLetterForKey.length ++}`+ index"></p>
         </div>
 
         <div v-if="selectWord.length" id="containerButton">
@@ -36,7 +33,7 @@
           </button>
         </div>
       </div>
-    <!--   A supprimer -->
+    <!--   A mettre en commentaire -->
       <p>{{ splitLetter }}</p>
     </div>
   </div>
@@ -69,6 +66,7 @@ export default{
             selectWord : [],
             splitLetter : [],
             numberLetter: [],
+            numberLetterForKey : [],
             letterButton : [],
             counterFalse : [],
             letterWon: [],
@@ -86,6 +84,7 @@ export default{
 
         for(let i = 0; i < letters.length; i++){ 
           this.numberLetter.push(i);
+          this.numberLetterForKey.push(i);
         }
         console.log('this.numberLetter', this.numberLetter)
         },
@@ -132,14 +131,19 @@ export default{
             console.log('counterFalse :', this.counterFalse)
           } 
           if(this.counterFalse.length >= 5){
-             let self = this;
+             const self = this;
 
                setTimeout(function(){ 
                   self.$router.push('/game-over');
                 }, 1000);
           }
+          console.log('compteur letter ok', this.numberLetter.length, this.letterWon.length)
           if(this.numberLetter.length == this.letterWon.length){
-            alert('gagné')
+            const self = this;
+
+              setTimeout(function(){ 
+                self.$router.push('/won');
+              }, 1000);
           }
         }
         this.letterButton = [];
