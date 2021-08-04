@@ -65,10 +65,10 @@ export default{
     margin-left: auto;
     .congrat{
         widows: 4rem;
-        font-size: 1.8rem;
-        font-family: 'Patrick Hand', cursive;
-        padding-bottom: 2rem;
-        padding-top: 1rem;
+        font-size: 1.7rem;
+        font-family: 'Gloria Hallelujah', cursive;
+        padding-bottom: 1rem;
+        padding-top: 0.5rem;
         animation-name: congrat;
         animation-duration: 10s;
         animation-iteration-count: infinite;

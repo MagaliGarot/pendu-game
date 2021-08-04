@@ -1,7 +1,7 @@
 <template>
   <div id="containerMain">
     <div>
-      <h1> Jeu du pendu </h1>
+      <h1 v-if="selectWord.length == 0" > Jeu du pendu </h1>
       <button 
         aria-label="Lancer la partie"
         id="play"

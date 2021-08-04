@@ -170,6 +170,7 @@ p {
   width: 20rem;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 10px;
 }
 
 #containerMain #letterFind {

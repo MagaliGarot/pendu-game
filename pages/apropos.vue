@@ -134,6 +134,7 @@
         .credit{
             font-family: 'Patrick Hand', cursive;
             font-size: 1.1rem;
+            padding-bottom: 4rem;
         }
     }
 
