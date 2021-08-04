@@ -17,30 +17,40 @@
     color: white;
     text-align: center;
     font-size: 2.3rem;
+    font-family: 'Gloria Hallelujah', cursive;
   }
 
   p{
     color: white;
     text-align: center;
+    font-family: 'Patrick Hand', cursive;
   }
 
 //Nav
 .containerNav{
+  display: flex;
+  align-items:center;
   background-color: #22666e;
   padding: 1rem 1rem;
   animation-name: colorChange;
   animation-duration: 14s;
   @keyframes colorChange{
     0% {  background-color: #22666e; }
-    50%  {  background-color: #65b3be; }
+    40% {  background-color: #d4a3be; }
+    60%  {  background-color: #65b3be; }
     100%{   background-color: #22666e;}
  }
+  #button{
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-right: 10px;
+  }
   .navBar{
     color: white;
     text-decoration: none;
     margin: 9px 9px;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-family: 'Patrick Hand', cursive;
     &:hover{
       text-decoration:underline;
       color: white;
@@ -68,12 +78,19 @@
         height: 75px;
         margin: 10px;
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 1.3rem;
+        font-family: 'Patrick Hand', cursive;
         .icon{
             width: 2.5rem;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: -4px;
         }
         &:hover{
           background-color: #fc8fcb;
+          -webkit-box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5); 
+          box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5);
           .icon{
             animation-name: rotate;
             animation-duration: 4s;
@@ -90,6 +107,8 @@
         &:focus{
           background-color: #fc8fcb;
           outline: none;
+          -webkit-box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5); 
+          box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5);
         }
     }
 
@@ -104,7 +123,6 @@
       width: 20rem;
       color: white;
       text-align: center;
-   
       span{
         opacity: 0%;
         margin: 10.5px;
@@ -116,7 +134,6 @@
         border-color: white;
         border-width: 3px;
         display: inline-block;
-       
       }
     }
 

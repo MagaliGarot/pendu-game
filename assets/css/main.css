@@ -8,7 +8,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #181a20;
 }
 
 h1 {
@@ -16,34 +16,84 @@ h1 {
   margin-bottom: 30px;
   color: white;
   text-align: center;
-  font-family: 'Scada', sans-serif;
+  font-size: 2.3rem;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 
 p {
   color: white;
   text-align: center;
+  font-family: 'Patrick Hand', cursive;
 }
 
 .containerNav {
-  background-color: #65b3be;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #22666e;
   padding: 1rem 1rem;
+  -webkit-animation-name: colorChange;
+          animation-name: colorChange;
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
+}
+
+@-webkit-keyframes colorChange {
+  0% {
+    background-color: #22666e;
+  }
+  40% {
+    background-color: #d4a3be;
+  }
+  60% {
+    background-color: #65b3be;
+  }
+  100% {
+    background-color: #22666e;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #22666e;
+  }
+  40% {
+    background-color: #d4a3be;
+  }
+  60% {
+    background-color: #65b3be;
+  }
+  100% {
+    background-color: #22666e;
+  }
+}
+
+.containerNav #button {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-right: 10px;
 }
 
 .containerNav .navBar {
   color: white;
   text-decoration: none;
-  font-family: 'Scada', sans-serif;
-  margin: 5px 5px;
-  font-weight: 600;
+  margin: 9px 9px;
+  font-size: 1.3rem;
+  font-family: 'Patrick Hand', cursive;
 }
 
 .containerNav .navBar:hover {
-  color: black;
+  text-decoration: underline;
+  color: white;
 }
 
 .containerNav .navBar:focus {
-  color: black;
+  text-decoration: underline;
   outline: none;
+  color: white;
 }
 
 #containerMain {
@@ -60,21 +110,59 @@ p {
   width: 75px;
   height: 75px;
   margin: 10px;
-  font-family: 'Scada', sans-serif;
   font-weight: 600;
+  font-size: 1.3rem;
+  font-family: 'Patrick Hand', cursive;
 }
 
 #containerMain #play .icon {
   width: 2.5rem;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: -4px;
 }
 
 #containerMain #play:hover {
   background-color: #fc8fcb;
+  -webkit-box-shadow: 1px 1px 15px 15px rgba(252, 143, 203, 0.5);
+  box-shadow: 1px 1px 15px 15px rgba(252, 143, 203, 0.5);
+}
+
+#containerMain #play:hover .icon {
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 #containerMain #play:focus {
   background-color: #fc8fcb;
   outline: none;
+  -webkit-box-shadow: 1px 1px 15px 15px rgba(252, 143, 203, 0.5);
+  box-shadow: 1px 1px 15px 15px rgba(252, 143, 203, 0.5);
 }
 
 #containerMain #teddy {
@@ -105,23 +193,23 @@ p {
 }
 
 #containerMain .buttonAlphabet {
-  background-color: #65b3be;
+  background-color: #22666e;
   color: white;
   border: none;
   border-radius: 1rem;
   width: 30px;
   height: 30px;
   margin: 10px;
-  font-family: 'Scada', sans-serif;
+  font-size: larger;
   font-weight: 800;
 }
 
 #containerMain .buttonAlphabet:hover {
-  background-color: #105963;
+  background-color: #28aebd;
 }
 
 #containerMain .buttonAlphabet:focus {
   outline: none;
-  background-color: #105963;
+  background-color: #28aebd;
 }
 /*# sourceMappingURL=main.css.map */

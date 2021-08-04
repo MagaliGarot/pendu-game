@@ -1,13 +1,18 @@
 <template>
     <div class="containerGame-Over">
         <h1>Vous avez gagné</h1>
-        <p class="congrat">Félicitations</p>
-        <img aria-hidden="true" id="teddy" :src="pictureHover"  @mouseover="hover = true" @mouseleave="hover = false">
+        <p class="congrat">
+            Félicitations, le nounours est hyper content ...
+        </p>
+        <img aria-hidden="true" alt="" id="teddy" :src="pictureHover"  @mouseover="hover = true" @mouseleave="hover = false">
+        <p class="textWon">
+            Faudrait pas l'habituer !
+        </p>
         <button id="play"  @click="pageGame()">Rejouer</button>
         <div class="containerHeart">
-            <img aria-hidden="true" id="heart" src="../assets/image/coeur-2.png">
-            <img aria-hidden="true" id="heart2" src="../assets/image/coeur-2.png">
-            <img aria-hidden="true" id="heart3" src="../assets/image/coeur-2.png">
+            <img aria-hidden="true" alt="" id="heart" src="../assets/image/coeur-2.png">
+            <img aria-hidden="true" alt="" id="heart2" src="../assets/image/coeur-2.png">
+            <img aria-hidden="true" alt="" id="heart3" src="../assets/image/coeur-2.png">
         </div>
     </div>
 </template>
@@ -60,16 +65,16 @@ export default{
     margin-left: auto;
     .congrat{
         widows: 4rem;
-        font-size: 2rem;
-        font-family: 'Scada', sans-serif;
-        padding-bottom: 3rem;
-        padding-top: 2rem;
+        font-size: 1.8rem;
+        font-family: 'Patrick Hand', cursive;
+        padding-bottom: 2rem;
+        padding-top: 1rem;
         animation-name: congrat;
         animation-duration: 10s;
         animation-iteration-count: infinite;
         @keyframes congrat{
         0% {  color: #22666e; }
-        50%  {  color: #fc8fcb; }
+        50%  {  color: #65b3be; }
         100%{   color: #22666e;}
         }
     }
@@ -90,6 +95,10 @@ export default{
         100%{  transform: translateX(-0.5%); }
      }
     }
+    .textWon{
+        font-size: 1.4rem;
+        font-family: 'Patrick Hand', cursive;
+    }
     #play{
         background-color: #65b3be;
         color: white;
@@ -97,8 +106,8 @@ export default{
         border-radius: 3rem;
         width: 75px;
         height: 75px;
-        font-family: 'Scada', sans-serif;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+        font-family: 'Patrick Hand', cursive;
         font-weight: 800;
         display: block;
         margin-right: auto;
@@ -106,10 +115,14 @@ export default{
         margin-top: 50px;
         &:hover{
           background-color: #fc8fcb;
+          -webkit-box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5); 
+          box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5);
         }
         &:focus{
           background-color: #fc8fcb;
           outline: none;
+          -webkit-box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5); 
+          box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5);
         }
     }
     .containerHeart{

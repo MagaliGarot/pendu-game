@@ -6,8 +6,8 @@
             <br>
             page non trouvée, c'est embêtant !
         </p>
-        <img aria-hidden="true" id="teddy" src="@/assets/image/nounours-game-over.png">
-        <button id="play"  @click="pageGame()">Jouer</button>
+        <img aria-hidden="true" alt="" id="teddy" src="@/assets/image/nounours-game-over.png">
+        <button id="play" @click="pageGame()">Jouer</button>
     </div>
 </template>
 
@@ -32,14 +32,15 @@ export default {
     margin-left: auto;
    .textError{
         font-size: 5rem;
-        font-family: 'Scada', sans-serif;
+        font-family: 'Patrick Hand', cursive;
         animation-name: textAnimate;
         animation-duration: 14s;
         animation-iteration-count: infinite;
+        text-shadow: 1px 12px 15px rgba(101,179,190,0.47);
    }
    .textErrorTwo{
-        font-size: 2rem;
-        font-family: 'Scada', sans-serif;
+        font-size: 1.6rem;
+        font-family: 'Gloria Hallelujah', cursive;
    }
     #teddy{
         display: block;
@@ -58,19 +59,24 @@ export default {
         border-radius: 3rem;
         width: 75px;
         height: 75px;
-        font-family: 'Scada', sans-serif;
-        font-size: 1.2rem;
+        font-family: 'Patrick Hand', cursive;
+        font-size: 1.8rem;
         font-weight: 800;
         display: block;
         margin-right: auto;
         margin-left: auto;
-        margin-top: 50px;
+        margin-top: 30px;
+        margin-bottom: 30px;
         &:hover{
           background-color: #fc8fcb;
+          -webkit-box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5); 
+          box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5);
         }
         &:focus{
           background-color: #fc8fcb;
           outline: none;
+          -webkit-box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5); 
+          box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5);
         }
     }
      @keyframes fleet{

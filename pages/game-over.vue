@@ -1,8 +1,9 @@
 <template>
     <div class="containerGame-Over">
         <h1 class="textGameOver">Vous avez perdu</h1>
-        <img aria-hidden="true" id="teddy" src="../assets/image/nounours-game-over.png">
-        <button id="play"  @click="pageGame()">Rejouer</button>
+        <img aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-game-over.png">
+        <button id="play" @click="pageGame()">Rejouer</button>
+        <p class="textOver">Sauverez-vous le nounours?</p>
     </div>
 </template>
 
@@ -26,6 +27,7 @@ export default{
         animation-name: textAnimate;
         animation-duration: 14s;
         animation-iteration-count: infinite;
+           text-shadow: 1px 12px 15px rgba(101,179,190,0.47);
    }
     #teddy{
         display: block;
@@ -44,8 +46,8 @@ export default{
         border-radius: 3rem;
         width: 75px;
         height: 75px;
-        font-family: 'Scada', sans-serif;
-        font-size: 1.2rem;
+        font-family: 'Patrick Hand', cursive;
+        font-size: 1.4rem;
         font-weight: 800;
         display: block;
         margin-right: auto;
@@ -53,11 +55,20 @@ export default{
         margin-top: 50px;
         &:hover{
           background-color: #fc8fcb;
+          -webkit-box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5); 
+          box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5);
         }
         &:focus{
           background-color: #fc8fcb;
+          -webkit-box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5); 
+          box-shadow: 1px 1px 15px 15px rgba(252,143,203,0.5);
           outline: none;
         }
+    }
+    .textOver{
+        margin-top: 3rem;
+        font-size: 1.2rem;
+        font-family: 'Gloria Hallelujah', cursive;
     }
      @keyframes fleet{
         0% {  
