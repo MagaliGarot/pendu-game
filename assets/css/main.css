@@ -102,6 +102,11 @@ p {
   margin-left: auto;
 }
 
+#containerMain .introText {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
 #containerMain #play {
   background-color: #65b3be;
   color: white;
@@ -165,9 +170,15 @@ p {
   box-shadow: 1px 1px 15px 15px rgba(252, 143, 203, 0.5);
 }
 
-#containerMain #teddy {
+#containerMain .containerTeddy {
+  width: 20rem;
+  height: 25rem;
+}
+
+#containerMain .containerTeddy #teddy {
   display: block;
   width: 20rem;
+  height: 100%;
   margin-right: auto;
   margin-left: auto;
   margin-top: 10px;
@@ -176,6 +187,7 @@ p {
 #containerMain #letterFind {
   width: 20rem;
   color: white;
+  height: 100%;
   text-align: center;
 }
 

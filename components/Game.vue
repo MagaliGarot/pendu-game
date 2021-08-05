@@ -16,12 +16,14 @@
         <img aria-hidden="true" alt="" class="icon" src="../assets/fontawesome/gamepad-solid.svg">
         Jouer
       </button>
-      <img v-if="this.counterFalse.length == 0" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounour-entier.png">
-      <img v-if="this.counterFalse.length == 1" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-1life.png">
-      <img v-if="this.counterFalse.length == 2" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-2life.png">
-      <img v-if="this.counterFalse.length == 3" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-3life.png">
-      <img v-if="this.counterFalse.length == 4" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-4life.png">
-      <img v-if="this.counterFalse.length == 5" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-5life.png">
+      <div class="containerTeddy">
+        <img v-if="this.counterFalse.length == 0" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounour-entier.png">
+        <img v-if="this.counterFalse.length == 1" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-1life.png">
+        <img v-if="this.counterFalse.length == 2" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-2life.png">
+        <img v-if="this.counterFalse.length == 3" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-3life.png">
+        <img v-if="this.counterFalse.length == 4" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-4life.png">
+        <img v-if="this.counterFalse.length == 5" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-5life.png">
+      </div>
       <div> 
 
         <div id="letterFind">

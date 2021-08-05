@@ -117,17 +117,23 @@
         }
     }
 
-    #teddy{
+    .containerTeddy{
+      width: 20rem;
+      height: 25rem;
+      #teddy{
         display: block;
         width: 20rem;
+        height: 100%;
         margin-right: auto;
         margin-left: auto;
         margin-top: 10px;
+      }
     }
 
     #letterFind{
       width: 20rem;
       color: white;
+      height: 100%;
       text-align: center;
       span{
         opacity: 0%;
