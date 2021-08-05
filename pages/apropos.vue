@@ -27,7 +27,7 @@
             Je suis désormais à la recherche d'un emploi dans le web développement 
             dans lequel m'investir et grandir. 
         </p>
-        <img aria-hidden="true" alt="" id="profil" src="../assets/image/magali2.png">
+        <img aria-hidden="true" alt="" id="profil" src="../assets/image/magali3.png">
         <br>
         <br>
         <div class="containerButton">
