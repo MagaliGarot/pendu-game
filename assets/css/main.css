@@ -97,7 +97,7 @@ p {
 }
 
 #containerMain {
-  width: 20rem;
+  width: 22rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -171,7 +171,7 @@ p {
 }
 
 #containerMain .containerTeddy {
-  width: 20rem;
+  width: 22rem;
   height: 25rem;
 }
 
@@ -185,7 +185,8 @@ p {
 }
 
 #containerMain #letterFind {
-  width: 20rem;
+  width: 22rem;
+  height: 100%;
   color: white;
   height: 100%;
   text-align: center;
@@ -194,6 +195,7 @@ p {
 #containerMain #letterFind span {
   opacity: 0%;
   margin: 10.5px;
+  font-size: 1.1rem;
 }
 
 #containerMain #letterFind p {
@@ -201,7 +203,7 @@ p {
   margin: 9px;
   border-style: none none solid none;
   border-color: white;
-  border-width: 3px;
+  border-width: 3.2px;
   display: inline-block;
 }
 

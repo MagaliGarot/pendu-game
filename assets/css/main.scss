@@ -65,7 +65,7 @@
 
 //Game
   #containerMain{
-    width: 20rem;
+    width: 22rem;
     margin-right: auto;
     margin-left: auto;
 
@@ -118,7 +118,7 @@
     }
 
     .containerTeddy{
-      width: 20rem;
+      width: 22rem;
       height: 25rem;
       #teddy{
         display: block;
@@ -131,20 +131,23 @@
     }
 
     #letterFind{
-      width: 20rem;
+      width: 22rem;
+      height: 100%;
       color: white;
       height: 100%;
       text-align: center;
       span{
+        
         opacity: 0%;
         margin: 10.5px;
+        font-size:1.1rem;
       }
       p{
         width: 15px;
         margin: 9px;
         border-style: none none solid none;
         border-color: white;
-        border-width: 3px;
+        border-width: 3.2px;
         display: inline-block;
       }
     }

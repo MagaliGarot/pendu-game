@@ -41,7 +41,7 @@
         </div>
       </div>
     <!--   For Test -->
-      <!-- <p>{{ splitLetter }}</p> -->
+   <!--    <p>{{ splitLetter }}</p> -->
     </div>
   </div>
 </template>
@@ -66,10 +66,8 @@ export default{
               'orchidee',
               'aimant',
               'desert',
-              'avertissement',
               'bonbons',
-              'mammifère',
-              'articulation',
+              'mammifere',
               'niveau',
               'jaguar',
               'courrier',
@@ -84,7 +82,6 @@ export default{
               'galactique',
               'vol',
               'compagnon',
-              'hippopotame',
               'iceberg',
               'hippodrome',
               'orchestre',
@@ -92,12 +89,9 @@ export default{
               'imagination',
               'labyrinthe',
               'somnambule',
-              'applaudissement',
               'attrayant',
               'almanach',
               'plongeon',
-              'gribouiller',
-              'gymnastique',
               'hamac',
               'flou',
               'or',
@@ -148,7 +142,6 @@ export default{
           });
 
           /* console.log('letterButtonclick[0] : ', letterButtonclick[0]) */
-
           let counter = 0;
           let disabled = 0;
 
