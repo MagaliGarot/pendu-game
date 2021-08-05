@@ -1,14 +1,12 @@
 # 🧸 pendu-game
 
 # 🔗 Lien vers le projet : 
-
-
+https://pendu-game.netlify.app/
 
 # 🗒Le projet :
 
 Développement d'un jeu du pendu avec nuxt.js
-
-![<Visuel>]()
+![<Visuel>](/assets/image/nounour-entier.png)
 
 ## 🔧 Langages
 
@@ -19,52 +17,34 @@ Développement d'un jeu du pendu avec nuxt.js
 ## 📁 Structure du projet
 
 ├── assets </br>
-│ ├── data.js</br>
+│ ├── CSS</br>
+│ ├── fontawesome</br>
+│ ├── image</br>
 ├── components </br>
-│ ├── Chambres.vue</br>
-│ ├── Headers.vue</br>
-│ ├── Map.vue</br>
-│ ├── Navigation.vue</br>
+│ ├── Game.vue</br>
+│ ├── Nav.vue</br>
 │ ├── Notfound.vue</br>
-│ ├── Slider.vue</br>
-├── content/blog</br>
-│ ├── first-post.md</br>
-│ ├── second-post.md</br>
 ├── layout</br>
 │ ├── default.vue</br>
+│ ├── error.vue</br>
 ├── pages</br>
-│ ├── blog</br>
-│ ├──── _slug.vue</br>
-│ ├── products</br>
-│ ├──── _id.vue</br>
-│ ├── article.vue</br>
-│ ├── contact.vue</br>
+│ ├── apropos.vue</br>
+│ ├── game-over.vue</br>
+│ ├── won.vue</br>
 │ ├── index.vue</br>
-├── store</br>
-│ ├── index.js</br>
 
 ## 📱 Responsive
-* Smartphone
-* Tablette
-* Desktop
+Construit en priorité pour les mobiles
 
 ## 🖊 A propos :
 
 ### 👩‍💻 Magali :
-
-Actuellement en formation à BeCode Liège, je me forme avec comme objectif de décrocher un emploi dans le web développement. 
-
-### 📌 Documentation
-
-https://www.youtube.com/watch?v=Wdmi4k7sFzU&t=7818s<br>
-https://www.digitalocean.com/community/tutorials/vuejs-create-image-slider<br>
-https://www.youtube.com/watch?v=1SAZMFwYUDE<br>
-https://fr.vuejs.org/v2/cookbook/form-validation.html<br>
+Après une formation à BeCode Liège , dans le web développement, j'ai réalisé un stage de trois mois orienté vue.js et accessibilité web. 
+Je suis désormais à la recherche d'un emploi dans le web développement dans lequel m'investir et grandir.  
 
 ### 🖼 Picture
-Infos et Images : http://chambresaustavit.free.fr/
-Logo et Illustrations : Magali Garot
-Icon du Slider : https://fontawesome.com/
+Illustrations : Magali Garot
+Icones gamepad, book, linkedin et github utilisés pour les boutons : https://fontawesome.com/
 
 ### Nuxt.js
 https://fr.nuxtjs.org/docs/2.x/get-started/installation

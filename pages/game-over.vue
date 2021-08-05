@@ -73,11 +73,11 @@ export default{
      @keyframes fleet{
         0% {  
             transform: translateY(0%); 
-            opacity: 100%;
+            opacity: 1;
         }
         25% {  
             transform: translateY(5%); 
-            opacity: 60%;
+            opacity: 0.7;
         }
         50%  { 
             transform: translateY(-5%);
@@ -85,34 +85,34 @@ export default{
         }
         75% { 
             transform: translateY(5%);
-            opacity: 60%; 
+            opacity: 0.5; 
         } 
         100%{ 
             transform: translateY(-5%);
-            opacity: 90%; 
+            opacity: 0.9; 
         }
      }
      @keyframes textAnimate{
         0% {  
             transform: translateX(0%); 
-            opacity: 100%;
+            opacity: 1;
         }
         25% {  
             transform: translateX(1%); 
-            opacity: 60%;
+            opacity: 0.6;
              font-size: 2.3rem;
         }
         50%  { 
             transform: translateX(-1%);
-            opacity: 100%;
+            opacity: 1;
         }
         75% { 
             transform: translateX(1%);
-            opacity: 90%; 
+            opacity: 0.9; 
         } 
         100%{ 
             transform: translateX(-1%);
-            opacity: 100%; 
+            opacity: 1; 
         }
      }
 }

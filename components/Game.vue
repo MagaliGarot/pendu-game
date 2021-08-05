@@ -2,7 +2,7 @@
   <div id="containerMain">
     <div>
       <h1 v-if="selectWord.length == 0" > Jeu du pendu </h1>
-        <p class="introText">
+        <p  v-if="selectWord.length == 0"  class="introText">
           Teddy a été condamné par le tribunal des jouets suite à une sombre affaire.
           <br>
           Résoud le pendu où Teddy ne sera plus.
