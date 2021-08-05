@@ -1,4 +1,73 @@
-# pendu-game
+# 🧸 pendu-game
+
+# 🔗 Lien vers le projet : 
+
+
+
+# 🗒Le projet :
+
+Développement d'un jeu du pendu avec nuxt.js
+
+![<Visuel>]()
+
+## 🔧 Langages
+
+* HTML
+* SCSS
+* Nuxt.js (vue.js)
+
+## 📁 Structure du projet
+
+├── assets </br>
+│ ├── data.js</br>
+├── components </br>
+│ ├── Chambres.vue</br>
+│ ├── Headers.vue</br>
+│ ├── Map.vue</br>
+│ ├── Navigation.vue</br>
+│ ├── Notfound.vue</br>
+│ ├── Slider.vue</br>
+├── content/blog</br>
+│ ├── first-post.md</br>
+│ ├── second-post.md</br>
+├── layout</br>
+│ ├── default.vue</br>
+├── pages</br>
+│ ├── blog</br>
+│ ├──── _slug.vue</br>
+│ ├── products</br>
+│ ├──── _id.vue</br>
+│ ├── article.vue</br>
+│ ├── contact.vue</br>
+│ ├── index.vue</br>
+├── store</br>
+│ ├── index.js</br>
+
+## 📱 Responsive
+* Smartphone
+* Tablette
+* Desktop
+
+## 🖊 A propos :
+
+### 👩‍💻 Magali :
+
+Actuellement en formation à BeCode Liège, je me forme avec comme objectif de décrocher un emploi dans le web développement. 
+
+### 📌 Documentation
+
+https://www.youtube.com/watch?v=Wdmi4k7sFzU&t=7818s<br>
+https://www.digitalocean.com/community/tutorials/vuejs-create-image-slider<br>
+https://www.youtube.com/watch?v=1SAZMFwYUDE<br>
+https://fr.vuejs.org/v2/cookbook/form-validation.html<br>
+
+### 🖼 Picture
+Infos et Images : http://chambresaustavit.free.fr/
+Logo et Illustrations : Magali Garot
+Icon du Slider : https://fontawesome.com/
+
+### Nuxt.js
+https://fr.nuxtjs.org/docs/2.x/get-started/installation
 
 ## Build Setup
 
