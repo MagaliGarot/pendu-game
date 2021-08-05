@@ -2,6 +2,11 @@
   <div id="containerMain">
     <div>
       <h1 v-if="selectWord.length == 0" > Jeu du pendu </h1>
+        <p class="introText">
+          Teddy a été condamné par le tribunal des jouets suite à une sombre affaire.
+          <br>
+          Résoud le pendu où Teddy ne sera plus.
+        </p>
       <button 
         aria-label="Lancer la partie"
         id="play"
@@ -33,8 +38,8 @@
           </button>
         </div>
       </div>
-    <!--   A mettre en commentaire -->
-      <p>{{ splitLetter }}</p>
+    <!--   For Test -->
+      <!-- <p>{{ splitLetter }}</p> -->
     </div>
   </div>
 </template>
@@ -57,11 +62,11 @@ export default{
               'mario',
               'pikachu',
             ],
-             alphabet: [
-               { letter: 'a' },{ letter: 'b' },{ letter: 'c' },{ letter: 'd' },{ letter: 'e' },{ letter: 'f' },{ letter: 'g' },
-               { letter: 'h' },{ letter: 'i' },{ letter: 'j' },{ letter: 'k' },{ letter: 'l' },{ letter: 'm' },{ letter: 'n' },
-               { letter: 'o' },{ letter: 'p' },{ letter: 'q' },{ letter: 'r' },{ letter: 's' },{ letter: 't' },{ letter: 'u' },
-               { letter: 'v' },{ letter: 'w' },{ letter: 'x' },{ letter: 'y' },{ letter: 'z' },
+            alphabet: [
+              { letter: 'a' },{ letter: 'b' },{ letter: 'c' },{ letter: 'd' },{ letter: 'e' },{ letter: 'f' },{ letter: 'g' },
+              { letter: 'h' },{ letter: 'i' },{ letter: 'j' },{ letter: 'k' },{ letter: 'l' },{ letter: 'm' },{ letter: 'n' },
+              { letter: 'o' },{ letter: 'p' },{ letter: 'q' },{ letter: 'r' },{ letter: 's' },{ letter: 't' },{ letter: 'u' },
+              { letter: 'v' },{ letter: 'w' },{ letter: 'x' },{ letter: 'y' },{ letter: 'z' },
             ],
             selectWord : [],
             splitLetter : [],
@@ -86,8 +91,7 @@ export default{
           this.numberLetter.push(i);
           this.numberLetterForKey.push(i);
         }
-        console.log('this.numberLetter', this.numberLetter)
-        },
+      },
 
       validateLetter(alphabet){ 
         this.letterButton.push({
@@ -101,14 +105,14 @@ export default{
             return item == letterButtonclick[0];
           });
 
-          console.log('checkLetter : ', checkLetter)
-          console.log('letterButtonclick[0] : ', letterButtonclick[0])
+          /* console.log('letterButtonclick[0] : ', letterButtonclick[0]) */
 
           let counter = 0;
+          let disabled = 0;
 
           if(checkLetter.length > 0){
-            console.log('lettre trouvée')
-            console.log('avant la boucle for this.numberLetter.length', this.numberLetter.length)
+           /*  console.log('lettre trouvée') */
+            disabled ++;
             for(let i = 0; i < this.numberLetter.length; i++){
               let myId =  document.getElementById(letterButtonclick[0]+`${i}`)
               if(myId === null){
@@ -117,30 +121,42 @@ export default{
                 document.getElementById(letterButtonclick[0]+`${i}`).style.cssText = "opacity: 100%;";
               }
             }
-            document.getElementById('push'+letterButtonclick[0]).style.cssText = "background-color: #50ef8d;";  
-            this.letterWon.push(checkLetter);
-            console.log('letterWon', this.letterWon.length);
+            document.getElementById('push'+letterButtonclick[0]).style.cssText = "background-color: #50ef8d;"; 
+            if(disabled > 0){
+              document.getElementById('push'+letterButtonclick[0]).disabled = true; 
+            }
+
+            /* console.log('letterWon', this.letterWon.length); */
+            
+            if(checkLetter.length >= 2){
+              for(let i = 0; i < checkLetter.length; i++){
+                let letterDouble = i - 1;
+                this.letterWon.push(letterDouble.length);
+              }
+            }else{
+              this.letterWon.push(checkLetter);
+            }
           }
           else{
-            console.log('lettre non trouvée')
+          /*   console.log('lettre non trouvée') */
+            disabled ++;
             document.getElementById('push'+letterButtonclick[0]).style.cssText = "background-color: #ed220a;"; 
             let counterResult = counter ++;
-            //counter == 5 -> Game Over
             this.counterFalse.push(counterResult);
-            console.log('counterResult :', counterResult)
-            console.log('counterFalse :', this.counterFalse)
+            if(disabled > 0){
+              document.getElementById('push'+letterButtonclick[0]).disabled = true; 
+            }
           } 
-          if(this.counterFalse.length >= 5){
-             const self = this;
 
-               setTimeout(function(){ 
-                  self.$router.push('/game-over');
-                }, 1000);
+          if(this.counterFalse.length >= 5){
+            const self = this;
+            setTimeout(function(){ 
+              self.$router.push('/game-over');
+            }, 1000);
           }
-          console.log('compteur letter ok', this.numberLetter.length, this.letterWon.length)
+        /*   console.log('compteur letter ok', this.numberLetter.length, this.letterWon.length) */
           if(this.numberLetter.length == this.letterWon.length){
             const self = this;
-
               setTimeout(function(){ 
                 self.$router.push('/won');
               }, 1000);

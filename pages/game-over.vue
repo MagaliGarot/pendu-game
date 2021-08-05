@@ -2,8 +2,8 @@
     <div class="containerGame-Over">
         <h1 class="textGameOver">Vous avez perdu</h1>
         <img aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-game-over.png">
+        <p class="textOver">R.I.P</p>
         <button id="play" @click="pageGame()">Rejouer</button>
-        <p class="textOver">Sauverez-vous le nounours?</p>
     </div>
 </template>
 
@@ -67,7 +67,7 @@ export default{
     }
     .textOver{
         margin-top: 3rem;
-        font-size: 1.2rem;
+        font-size: 2.3rem;
         font-family: 'Gloria Hallelujah', cursive;
     }
      @keyframes fleet{

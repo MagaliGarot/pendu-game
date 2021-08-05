@@ -2,12 +2,9 @@
     <div class="containerGame-Over">
         <h1>Vous avez gagné</h1>
         <p class="congrat">
-            Félicitations, le nounours est hyper content ...
+            Félicitations, Teddy est hyper content ...
         </p>
         <img aria-hidden="true" alt="" id="teddy" :src="pictureHover"  @mouseover="hover = true" @mouseleave="hover = false">
-        <p class="textWon">
-            Faudrait pas l'habituer !
-        </p>
         <button id="play"  @click="pageGame()">Rejouer</button>
         <div class="containerHeart">
             <img aria-hidden="true" alt="" id="heart" src="../assets/image/coeur-2.png">
@@ -29,9 +26,10 @@ export default{
     },
     computed: {
         pictureHover () {
-        if (this.hover == true) {
+        if(this.hover == true) {
             return this.teddyTwo
-        } else {
+        } 
+        else{
             return this.teddyOne
         }
         }
@@ -41,7 +39,6 @@ export default{
             this.$router.push('/');
         }
     }
-   
 }
 </script>
 
@@ -95,10 +92,6 @@ export default{
         100%{  transform: translateX(-0.5%); }
      }
     }
-    .textWon{
-        font-size: 1.4rem;
-        font-family: 'Patrick Hand', cursive;
-    }
     #play{
         background-color: #65b3be;
         color: white;
@@ -143,11 +136,11 @@ export default{
         }
         @keyframes heartAnim{
             0% {  
-                transform: translateY(200px); 
+                transform: translateY(100px); 
                 opacity: 80%;
             }
             100%{  
-                transform: translateY(-850px); 
+                transform: translateY(-830px); 
                 opacity: 80%;
             }
         }
