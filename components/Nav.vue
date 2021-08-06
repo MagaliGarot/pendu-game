@@ -12,7 +12,13 @@
 export default{
     methods: {
         reload(){
-            document.location.reload();
+
+            if($nuxt.$route.path == '/') {
+                document.location.reload();
+            }
+            else{
+                this.$router.push({ path: '/'} );
+            }
         }
     }
 }
