@@ -5,7 +5,7 @@
         <p  v-if="selectWord.length == 0"  class="introText">
           Teddy a été condamné par le tribunal des jouets suite à une sombre affaire.
           <br>
-          Résoud le pendu où Teddy ne sera plus.
+          Résous le pendu ou Teddy ne sera plus.
         </p>
       <button 
         aria-label="Lancer la partie"
@@ -25,7 +25,9 @@
         <img v-if="this.counterFalse.length == 5" aria-hidden="true" alt="" id="teddy" src="../assets/image/nounours-5life.png">
       </div>
       <div> 
-
+        <p class="wordIfGameOver" v-for="(item, index) in selectWord" :key="index">
+            <span v-if="counterFalse.length >= 5"> Le mot était : {{ item }} </span>
+        </p>
         <div id="letterFind">
             <span :id="item+index" v-for="(item, index) in splitLetter[0]" :key="index">
                 {{ item }}
@@ -196,14 +198,14 @@ export default{
             const self = this;
             setTimeout(function(){ 
               self.$router.push('/game-over');
-            }, 1000);
+            }, 2000);
           }
         /*   console.log('compteur letter ok', this.numberLetter.length, this.letterWon.length) */
           if(this.numberLetter.length == this.letterWon.length){
             const self = this;
               setTimeout(function(){ 
                 self.$router.push('/won');
-              }, 1000);
+              }, 1500);
           }
         }
         this.letterButton = [];

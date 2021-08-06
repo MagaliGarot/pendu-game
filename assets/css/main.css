@@ -207,6 +207,11 @@ p {
   margin-top: 10px;
 }
 
+#containerMain .wordIfGameOver {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
 #containerMain #letterFind {
   width: 22rem;
   height: 100%;
