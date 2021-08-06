@@ -41,7 +41,7 @@
         </div>
       </div>
     <!--   For Test -->
-      <p>{{ splitLetter }}</p>
+    <!--   <p>{{ splitLetter }}</p> -->
     </div>
   </div>
 </template>
