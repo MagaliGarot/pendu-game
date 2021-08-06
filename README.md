@@ -3,7 +3,7 @@
 # 🔗 Lien vers le projet : 
 https://pendu-game.netlify.app/
 
-# 🗒Le projet :
+# 🗒 Le projet :
 
 Développement d'un jeu du pendu avec nuxt.js
 ![<Visuel>](/assets/image/nounour-entier.png)

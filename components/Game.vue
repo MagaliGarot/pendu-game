@@ -41,7 +41,7 @@
         </div>
       </div>
     <!--   For Test -->
-   <!--    <p>{{ splitLetter }}</p> -->
+      <p>{{ splitLetter }}</p>
     </div>
   </div>
 </template>
@@ -74,7 +74,6 @@ export default{
               'noisette',
               'permanent',
               'roi',
-              'ambassadeur',
               'perroquet',
               'recueillir',
               'pyramide',
@@ -85,8 +84,6 @@ export default{
               'iceberg',
               'hippodrome',
               'orchestre',
-              'grognement',
-              'imagination',
               'labyrinthe',
               'somnambule',
               'attrayant',
@@ -97,6 +94,18 @@ export default{
               'or',
               'boxeur',
               'pair',
+              'hasard',
+              'aventure',
+              'atome',
+              'auberge',
+              'cellules',
+              'diagonale',
+              'humour',
+              'harpe',
+              'igloo',
+              'glacier',
+              'ruche',
+              'branche'
             ],
             alphabet: [
               { letter: 'a' },{ letter: 'b' },{ letter: 'c' },{ letter: 'd' },{ letter: 'e' },{ letter: 'f' },{ letter: 'g' },
