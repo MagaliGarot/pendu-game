@@ -25,7 +25,7 @@
         <br>
         <p class="borderText">
             Je suis désormais à la recherche d'un emploi dans le web développement 
-            dans lequel m'investir et grandir. 
+            dans lequel je pourrai m'investir et grandir. 
         </p>
         <img aria-hidden="true" alt="" id="profil" src="../assets/image/magali3.png">
         <br>
