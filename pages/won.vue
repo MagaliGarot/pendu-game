@@ -137,11 +137,11 @@ export default{
         @keyframes heartAnim{
             0% {  
                 transform: translateY(100px); 
-                opacity: 80%;
+                opacity: 0.8;
             }
             100%{  
                 transform: translateY(-830px); 
-                opacity: 80%;
+                opacity: 1;
             }
         }
     }
